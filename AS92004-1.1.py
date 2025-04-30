@@ -16,3 +16,15 @@ def get_name():
 
 get_name()
 
+def get_age():
+    while True:
+        try:
+            age = int(input('Please enter your age: '))
+            if age > 0:
+                return age
+            else:
+                print('Age must be a positive number. Please try again.')
+        except ValueError:
+            print('Invalid input. Please enter a valid number for age.')
+
+get_age()
