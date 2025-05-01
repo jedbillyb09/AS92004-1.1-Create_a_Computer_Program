@@ -63,8 +63,24 @@ def get_chosen_activity():
     while True:
         try:
             chosen_activity = int(input('Please enter the number corresponding to the activity you wish to particpate in : '))
-            if chosen_activity in [1, 2, 3]:
-                return chosen_activity
+            if chosen_activity in [1]:
+                activity = ('Cultural immersion')
+                day_length = 5
+                difficulty = ('easy')
+                cost = 800
+                return activity, day_length, difficulty, cost
+            elif chosen_activity in [2]:
+                activity = ('Kayaking and pancakes')
+                day_length = 3
+                difficulty = ('moderate')
+                cost = 400
+                return activity, day_length, difficulty, cost
+            elif chosen_activity in [3]:
+                activity = ('Mountain biking')
+                day_length = 4
+                difficulty = ('difficult')
+                cost = 900
+                return activity, day_length, difficulty, cost
             else:
                 print('Invalid choice. Please enter a number between 1 and 3.')
                 print()
