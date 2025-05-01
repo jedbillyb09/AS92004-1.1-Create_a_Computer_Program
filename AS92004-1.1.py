@@ -29,10 +29,13 @@ def get_age():
 
 
 def validate_age(age):
-    if age >= 5 and age <= 17:
-        return True
-    else:
-        print('Sorry, you are not eligible for the school holiday camp.')
+    if age < 5:
+        print('Sorry, you are too young to attend the camp.')
         exit()
+    elif age > 18:
+        print('Sorry, you are too old to attend the camp.')
+        exit()
+    else:
+        return True
 
 validate_age(get_age())
