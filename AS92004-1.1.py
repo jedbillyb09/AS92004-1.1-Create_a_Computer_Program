@@ -4,7 +4,7 @@
 
 # Start of the script
 
-print('Welcome to the school holiday camo!')
+print('Welcome to the school holiday camp!')
 
 def get_name():
     while True:
@@ -27,4 +27,12 @@ def get_age():
         except ValueError:
             print('Invalid input. Please enter a valid number for age.')
 
-get_age()
+
+def validate_age(age):
+    if age >= 5 and age <= 17:
+        return True
+    else:
+        print('Sorry, you are not eligible for the school holiday camp.')
+        exit()
+
+validate_age(get_age())
