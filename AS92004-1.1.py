@@ -72,5 +72,27 @@ def get_chosen_activity():
             print('Invalid input. Please enter a number corresponding to your chosen activity.')
             print()
             
-
 chosen_activity = get_chosen_activity()
+
+def get_meal_preference():
+
+    meal_list = ['Standard','vegetarian','vegan']
+    print('Please choose a meal preference from the list below:')
+    print()
+    print(f'1. {meal_list[0]} ')
+    print(f'2. {meal_list[1]} ')
+    print(f'3. {meal_list[2]} ')
+
+    while True:
+        try:
+            meal_preference = int(input('Please enter the number corresponding to your meal preference: '))
+            if meal_preference in [1, 2, 3]:
+                return meal_preference
+            else:
+                print('Invalid choice. Please enter a number between 1 and 3.')
+                print()
+        except ValueError:
+            print('Invalid input. Please enter a number corresponding to your meal preference.')
+            print()
+
+meal_preference = get_meal_preference()
