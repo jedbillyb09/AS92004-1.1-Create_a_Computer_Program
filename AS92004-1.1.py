@@ -96,3 +96,14 @@ def get_meal_preference():
             print()
 
 meal_preference = get_meal_preference()
+
+def get_shuttle_bus():
+    while True:
+        shuttle_bus = input('Do you require a shuttle bus for $80? (yes/no) (y/n')
+        if shuttle_bus.lower() in ['yes', 'y', 'no', 'n']:
+            return shuttle_bus.lower()
+        else:
+            print('Invalid input. Please enter "yes" or "no".')
+            print()
+
+shuttle_bus = get_shuttle_bus()
