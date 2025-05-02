@@ -119,3 +119,12 @@ def get_shuttle_bus():
 shuttle_bus = get_shuttle_bus()
 
 print(f'Hello {name}, you are {age} years old. you are going to participate in {activity} which is {day_length} days long and is considered {difficulty} and costs ${cost}. Your meal preference is {meal_preference} and you have chosen to {shuttle_bus} the shuttle bus.')
+
+final = input('Would you like to confirm your booking? (yes/no) (y/n)')
+if final.lower() in ['yes', 'y']:
+    print('Thank you')
+else:
+    print('Cancelled.')
+    exit()
+
+#end
