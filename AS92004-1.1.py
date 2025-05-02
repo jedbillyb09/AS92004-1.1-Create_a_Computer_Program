@@ -110,13 +110,17 @@ meal_preference = get_meal_preference()
 def get_shuttle_bus():
     while True:
         shuttle_bus = input('Do you require a shuttle bus for $80? (yes/no) (y/n')
-        if shuttle_bus.lower() in ['yes', 'y', 'no', 'n']:
-            return shuttle_bus.lower()
+        if shuttle_bus.lower() in ['yes', 'y']:
+            aditional_cost = 80
+            return aditional_cost
+        elif shuttle_bus.lower() in ['no', 'n']:
+            aditional_cost = 0
+            return aditional_cost
         else:
             print('Invalid input. Please enter "yes" or "no".')
             print()
 
-shuttle_bus = get_shuttle_bus()
+aditional_cost = get_shuttle_bus()
 
 print(f'Hello {name}, you are {age} years old. you are going to participate in {activity} which is {day_length} days long and is considered {difficulty} and costs ${cost}. Your meal preference is {meal_preference} and you have chosen to {shuttle_bus} the shuttle bus.')
 
@@ -127,4 +131,4 @@ else:
     print('Cancelled.')
     exit()
 
-#end
+# End
