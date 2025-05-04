@@ -34,7 +34,6 @@ def get_age():
             print('Invalid input. Please enter a valid number for age.')
             print()
 
-age = get_age()
 
 def validate_age(age):
     if age < 5:
