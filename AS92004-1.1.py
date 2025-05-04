@@ -93,11 +93,19 @@ def get_meal_preference():
     print(f'2. {meal_list[1]} ')
     print(f'3. {meal_list[2]} ')
 
+
     while True:
         try:
             meal_preference = int(input('Please enter the number corresponding to your meal preference: '))
-            if meal_preference in [1, 2, 3]:
-                return meal_preference
+            if meal_preference == 1:
+                meal_choice = 'Standard'
+                return meal_choice
+            elif meal_preference == 2:
+                meal_choice = 'vegetarian'
+                return meal_choice
+            elif meal_preference == 3:
+                meal_choice = 'vegan'
+                return meal_choice
             else:
                 print('Invalid choice. Please enter a number between 1 and 3.')
                 print()
@@ -105,24 +113,28 @@ def get_meal_preference():
             print('Invalid input. Please enter a number corresponding to your meal preference.')
             print()
 
-meal_preference = get_meal_preference()
+meal_choice = get_meal_preference()
 
 def get_shuttle_bus():
     while True:
         shuttle_bus = input('Do you require a shuttle bus for $80? (yes/no) (y/n')
         if shuttle_bus.lower() in ['yes', 'y']:
             aditional_cost = 80
-            return aditional_cost
+            shuttle_bus = 'take'
+            return aditional_cost, shuttle_bus
         elif shuttle_bus.lower() in ['no', 'n']:
             aditional_cost = 0
-            return aditional_cost
+            shuttle_bus = 'not take'
+            return aditional_cost, shuttle_bus
         else:
             print('Invalid input. Please enter "yes" or "no".')
             print()
 
-aditional_cost = get_shuttle_bus()
+aditional_cost, shuttle_bus = get_shuttle_bus()
 
-print(f'Hello {name}, you are {age} years old. you are going to participate in {activity} which is {day_length} days long and is considered {difficulty} and costs ${cost}. Your meal preference is {meal_preference} and you have chosen to {shuttle_bus} the shuttle bus.')
+final_cost = cost + aditional_cost
+
+print(f'Hello {name}, you are {age} years old. you are going to participate in {activity} which is {day_length} days long and is considered {difficulty} and costs ${cost}. Your meal preference is {meal_choice} and you have chosen to {shuttle_bus} the shuttle bus. Your total cost is ${final_cost}.')
 
 final = input('Would you like to confirm your booking? (yes/no) (y/n)')
 if final.lower() in ['yes', 'y']:
