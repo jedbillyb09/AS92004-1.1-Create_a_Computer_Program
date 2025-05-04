@@ -80,8 +80,6 @@ def get_chosen_activity():
 
 # Call the function and unpack the returned values
 activity, day_length, difficulty, cost = get_chosen_activity()
-            
-chosen_activity = get_chosen_activity()
 
 def get_meal_preference():
 
