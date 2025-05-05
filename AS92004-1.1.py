@@ -25,7 +25,13 @@ def get_age():
     while True:
         try:
             age = int(input(f'Hi {name}, how old are you? '))
-            if age > 0:
+            if age < 5:
+                print('Sorry, you are too young to attend the camp.')
+                exit()
+            elif age > 18:
+                print('Sorry, you are too old to attend the camp.')
+                exit()
+            elif 5 <= age <= 18:
                 return age
             else:
                 print('Age must be a positive number. Please try again.')
@@ -34,18 +40,8 @@ def get_age():
             print('Invalid input. Please enter a valid number for age.')
             print()
 
+age = get_age()
 
-def validate_age(age):
-    if age < 5:
-        print('Sorry, you are too young to attend the camp.')
-        exit()
-    elif age > 18:
-        print('Sorry, you are too old to attend the camp.')
-        exit()
-    else:
-        return True
-
-validate_age(get_age())
 
 print()
 
@@ -133,7 +129,7 @@ final_cost = cost + aditional_cost
 
 print(f'Hello {name}, you are {age} years old. you are going to participate in {activity} which is {day_length} days long and is considered {difficulty} and costs ${cost}. Your meal preference is {meal_choice} and you have chosen to {shuttle_bus} the shuttle bus. Your total cost is ${final_cost}.')
 
-final = input('Would you like to confirm your booking? (yes/no) (y/n)')
+final = input(f'Would you like to confirm your booking at the cost of {final_cost}? (yes/no) (y/n)')
 if final.lower() in ['yes', 'y']:
     print('Thank you')
 else:
