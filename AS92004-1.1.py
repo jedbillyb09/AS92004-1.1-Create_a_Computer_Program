@@ -4,6 +4,24 @@
 
 # Start of the script
 
+# Lists
+# 1. List of activities
+activity_list = [
+'Cultural immersion. This is for 5 days and is considered "easy" and costs $800.',
+'Kayaking and pancakes. This is for 3 days and is considered "moderate" and costs $400.',
+'Mountain biking. This is for 4 days and is considered "difficult" and costs $900.'
+]
+# 2. List of meal preferences
+meal_list = ['Standard', 'Vegetarian', 'Vegan']
+
+# Constants
+# 1. Cost of the shuttle bus
+shuttle_bus_cost = 80
+# 2 minimum age for the camp
+min_age = 5
+# 3. maximum age for the camp
+max_age = 18
+
 print('Welcome to the holiday camp!')
 
 print()
@@ -21,7 +39,7 @@ name = get_name()
 
 print()
 
-def get_age():
+def get_age(min_age, max_age):
     while True:
         try:
             age = int(input(f'Hi {name}, how old are you? '))
@@ -40,17 +58,12 @@ def get_age():
             print('Invalid input. Please enter a valid number for age.')
             print()
 
-age = get_age()
+age = get_age(min_age, max_age)
 
 
 print()
 
-def get_chosen_activity():
-    activity_list = [
-        'Cultural immersion. This is for 5 days and is considered "easy" and costs $800.',
-        'Kayaking and pancakes. This is for 3 days and is considered "moderate" and costs $400.',
-        'Mountain biking. This is for 4 days and is considered "difficult" and costs $900.'
-    ]
+def get_chosen_activity(activity_list):
     
     print('Please choose an activity from the list below:')
     print(f'1. {activity_list[0]}')
@@ -76,11 +89,9 @@ def get_chosen_activity():
             print()
 
 # Call the function and unpack the returned values
-activity, day_length, difficulty, cost = get_chosen_activity()
+activity, day_length, difficulty, cost = get_chosen_activity(activity_list)
 
-def get_meal_preference():
-
-    meal_list = ['Standard','vegetarian','vegan']
+def get_meal_preference(meal_list):
 
     print()
     print('Please choose a meal preference from the list below:')
@@ -112,11 +123,11 @@ meal_choice = get_meal_preference()
 
 print()
 
-def get_shuttle_bus():
+def get_shuttle_bus(shuttle_bus_cost):
     while True:
         shuttle_bus = input('Do you require a shuttle bus for $80? (yes/no) (y/n): ')
         if shuttle_bus.lower() in ['yes', 'y']:
-            aditional_cost = 80
+            aditional_cost = + shuttle_bus_cost
             shuttle_bus = 'take'
             return aditional_cost, shuttle_bus
         elif shuttle_bus.lower() in ['no', 'n']:
