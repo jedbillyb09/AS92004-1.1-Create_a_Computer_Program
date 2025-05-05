@@ -4,7 +4,7 @@
 
 # Start of the script
 
-print('Welcome to the school holiday camp!')
+print('Welcome to the holiday camp!')
 
 print()
 
@@ -53,10 +53,11 @@ def get_chosen_activity():
     ]
     
     print('Please choose an activity from the list below:')
-    print()
     print(f'1. {activity_list[0]}')
     print(f'2. {activity_list[1]}')
     print(f'3. {activity_list[2]}')
+
+    print()
 
     while True:
         try:
@@ -80,12 +81,13 @@ activity, day_length, difficulty, cost = get_chosen_activity()
 def get_meal_preference():
 
     meal_list = ['Standard','vegetarian','vegan']
-    print('Please choose a meal preference from the list below:')
+
     print()
+    print('Please choose a meal preference from the list below:')
     print(f'1. {meal_list[0]} ')
     print(f'2. {meal_list[1]} ')
     print(f'3. {meal_list[2]} ')
-
+    print()
 
     while True:
         try:
@@ -108,9 +110,11 @@ def get_meal_preference():
 
 meal_choice = get_meal_preference()
 
+print()
+
 def get_shuttle_bus():
     while True:
-        shuttle_bus = input('Do you require a shuttle bus for $80? (yes/no) (y/n')
+        shuttle_bus = input('Do you require a shuttle bus for $80? (yes/no) (y/n): ')
         if shuttle_bus.lower() in ['yes', 'y']:
             aditional_cost = 80
             shuttle_bus = 'take'
@@ -127,7 +131,10 @@ aditional_cost, shuttle_bus = get_shuttle_bus()
 
 final_cost = cost + aditional_cost
 
+
+print()
 print(f'Hello {name}, you are {age} years old. you are going to participate in {activity} which is {day_length} days long and is considered {difficulty} and costs ${cost}. Your meal preference is {meal_choice} and you have chosen to {shuttle_bus} the shuttle bus. Your total cost is ${final_cost}.')
+print()
 
 final = input(f'Would you like to confirm your booking at the cost of {final_cost}? (yes/no) (y/n)')
 if final.lower() in ['yes', 'y']:
