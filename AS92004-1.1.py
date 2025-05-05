@@ -165,12 +165,21 @@ print(f'Hello {camper_name}, you are {camper_age} years old. you are going to pa
 # Blank Line
 print()
 
-# Final confirmation input
-final = input(f'Would you like to confirm your booking at the cost of {final_cost}? (yes/no) (y/n)')
-if final.lower() in ['yes', 'y']:
-    print('Thank you')
-else:
-    print('Cancelled.')
-    exit()
+# Subroutine gathering final cost confirmation
+def final_cost_input(final_cost):
+    while True:
+        final = input(f'Would you like to confirm your booking at the cost of {final_cost}? (yes/no) (y/n): ')
+        if final.lower() in ['yes', 'y']:
+            print('Thank you for confirming your booking!')
+            return
+        elif final.lower() in ['no', 'n']:
+            print('Booking cancelled.')
+            exit()
+        else:
+            print('Invalid input. Please enter "yes" or "no".')
+            print()
 
-# End
+# Call the function to get camper final cost confirmation
+final_cost_input(final_cost)
+
+# End of the script
