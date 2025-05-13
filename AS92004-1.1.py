@@ -8,7 +8,7 @@ activity_list = [
 'Kayaking and pancakes. This is for 3 days and is considered "moderate" and costs $400.',
 'Mountain biking. This is for 4 days and is considered "difficult" and costs $900.']
 
-meal_list = ['Standard', 'Vegetarian', 'Vegan']
+meal_list = ['Vegan', 'Vegetarian', 'Standerd']
 
 # Constants
 
@@ -56,7 +56,13 @@ def def_camper_age(min_age, max_age):
                 print('Sorry, you are too old to attend the camp.')
                 exit()
             elif min_age <= camper_age <= max_age:
-                return camper_age
+                if camper_age >= 15:
+                    print('You hava a chance to be a campe leader!')
+                    print()
+                elif camper_age <= 15:
+                    print('You are too old to be a campe leader!')
+                    print()
+                return camper_age   
             else:
                 print('Age must be a positive number. Please try again.')
                 print()
