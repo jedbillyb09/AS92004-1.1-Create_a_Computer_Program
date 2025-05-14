@@ -16,7 +16,7 @@ shuttle_bus_cost = 80
 
 min_age = 5
 
-max_age = 18
+max_age = 17
 
 # /////////////////
 # Start of the script
@@ -57,7 +57,7 @@ def def_camper_age(min_age, max_age):
                 exit()
             elif min_age <= camper_age <= max_age:
                 if camper_age >= 15:
-                    print('You hava a chance to be a campe leader!')
+                    print('You hava a chance to be a camp leader!')
                     print()
                 elif camper_age <= 15:
                     print('You are too old to be a campe leader!')
