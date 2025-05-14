@@ -49,7 +49,10 @@ def def_camper_age(min_age, max_age):
     while True:
         try:
             camper_age = int(input(f'Hi {camper_name}, how old are you? '))
-            if camper_age < min_age:
+            if camper_age < 0:
+                print('Age cannot be negative. Please enter a valid age.')
+                print()
+            elif camper_age < min_age:
                 print('Sorry, you are too young to attend the camp.')
                 exit()
             elif camper_age > max_age:
@@ -57,10 +60,10 @@ def def_camper_age(min_age, max_age):
                 exit()
             elif min_age <= camper_age <= max_age:
                 if camper_age >= 15:
-                    print('You hava a chance to be a camp leader!')
+                    print('You have a chance to be a camp leader!')
                     print()
-                elif camper_age <= 15:
-                    print('You are too old to be a campe leader!')
+                elif camper_age < 15:
+                    print('You are too young to be a camp leader!')
                     print()
                 return camper_age   
             else:
