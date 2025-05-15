@@ -32,10 +32,10 @@ print()
 def def_camper_name():
     while True:
         camper_name = input('Please enter your name: ')
-        if len(camper_name) > 0:
+        if len(camper_name) > 0 and not camper_name.isdigit():
             return camper_name
         else:
-            print('Name cannot be empty. Please try again.')
+            print('Name cannot be empty or consist of only digits. Please try again.')
             print()
 
 # Call the function to get camper name
